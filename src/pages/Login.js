@@ -22,10 +22,10 @@ class Login extends Component {
       user: {
         name: target.value,
       },
-    }, this.handleLoginButton);
+    }, this.enableLoginButton);
   }
 
-  handleLoginButton = () => {
+  enableLoginButton = () => {
     const minLength = 2;
     const { user } = this.state;
     const { name } = user;

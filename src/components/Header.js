@@ -27,10 +27,27 @@ class Header extends Component {
       loading ? <Loading /> : (
         <header data-testid="header-component">
           <h1>TrybeTunes</h1>
-          <Link to="/search" data-testid="link-to-search">Search</Link>
-          <Link to="/favorites" data-testid="link-to-favorites">Favorites</Link>
-          <Link to="/profile" data-testid="link-to-profile">Profile</Link>
-          <h2 data-testid="header-user-name">{name}</h2>
+          <nav>
+            <Link
+              to="/search"
+              data-testid="link-to-search"
+            >
+              Search
+            </Link>
+            <Link
+              to="/favorites"
+              data-testid="link-to-favorites"
+            >
+              Favorites
+            </Link>
+            <Link
+              to="/profile"
+              data-testid="link-to-profile"
+            >
+              Profile
+            </Link>
+            <h2 data-testid="header-user-name">{name}</h2>
+          </nav>
         </header>
       )
     );
