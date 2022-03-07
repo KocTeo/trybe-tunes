@@ -8,16 +8,21 @@ class Header extends Component {
     super();
 
     this.state = {
-      loading: false,
+      loading: true,
+      name: '',
     };
   }
 
-  componentDidMount() {
-    getUser();
+  componentDidMount = async () => {
+    const user = await getUser();
+    this.setState({
+      name: user.name,
+      loading: false,
+    });
   }
 
   render() {
-    const { loading } = this.state;
+    const { loading, name } = this.state;
     return (
       loading ? <Loading /> : (
         <header data-testid="header-component">
@@ -25,6 +30,7 @@ class Header extends Component {
           <Link to="/search" data-testid="link-to-search">Search</Link>
           <Link to="/favorites" data-testid="link-to-favorites">Favorites</Link>
           <Link to="/profile" data-testid="link-to-profile">Profile</Link>
+          <h2 data-testid="header-user-name">{name}</h2>
         </header>
       )
     );
