@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router';
 import Loading from './Loading';
 import { createUser } from '../services/userAPI';
 
@@ -12,6 +13,7 @@ class Login extends Component {
       },
       disable: true,
       loading: false,
+      redirect: false,
     };
   }
 
@@ -33,15 +35,21 @@ class Login extends Component {
   }
 
   handleLoadingOrRedirect = async () => {
-    this.setState({ loading: true });
     const { user } = this.state;
-    await createUser(user).then(() => {
-      this.setState({ loading: false });
-    });
+    this.setState(
+      { loading: true },
+      async () => {
+        await createUser(user);
+        this.setState({
+          loading: false,
+          redirect: true,
+        });
+      },
+    );
   }
 
   render() {
-    const { loading, disable } = this.state;
+    const { loading, disable, redirect } = this.state;
     return (
       loading ? <Loading /> : (
         <div data-testid="page-login">
@@ -60,6 +68,7 @@ class Login extends Component {
           >
             Entrar
           </button>
+          { redirect && (<Redirect to="/search" />) }
         </div>
       )
     );
