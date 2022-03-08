@@ -36,8 +36,10 @@ class Album extends Component {
           { musics.map((music) => (music.trackName === undefined ? null
             : (
               <MusicCard
+                dataMusic={ music }
                 musicName={ music.trackName }
                 player={ music.previewUrl }
+                trackId={ music.trackId }
               />))) }
         </section>
       </div>
