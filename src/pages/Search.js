@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from './Loading';
-import CardMusics from '../components/CardMusics';
+import CardAlbum from '../components/CardAlbum';
 
 class Search extends Component {
   constructor() {
@@ -72,7 +72,7 @@ class Search extends Component {
         </h2>
         { responseApi && albuns.length > 0 ? (
           albuns.map((album) => (
-            <CardMusics
+            <CardAlbum
               key={ album.collectionId }
               artistName={ album.artistName }
               collectionName={ album.collectionName }
