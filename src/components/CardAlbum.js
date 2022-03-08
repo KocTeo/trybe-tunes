@@ -10,6 +10,7 @@ class CardAlbum extends Component {
         <Link
           to={ `/album/${collectionId}` }
           data-testid={ `link-to-album-${collectionId}` }
+          albumId={ collectionId }
         >
           <div>
             <img src={ artworkUrl100 } alt={ collectionName } />
