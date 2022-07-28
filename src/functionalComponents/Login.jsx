@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router';
 import Loading from '../pages/Loading';
 import { createUser } from '../services/userAPI';
+import LoginStyle from '../styles/LoginStyle/LoginStyle';
 
 const Login = () => {
   const [user, setUser] = useState({ name: '' });
@@ -31,24 +32,38 @@ const Login = () => {
 
   return (
     loading ? <Loading /> : (
-      <div data-testid="page-login">
-        <label htmlFor="login-name-input">
-          <input
-            data-testid="login-name-input"
-            placeholder="usuário"
-            onChange={ handleNameUser }
-          />
-        </label>
-        <button
-          type="submit"
-          data-testid="login-submit-button"
-          disabled={ disable }
-          onClick={ handleLoadingOrRedirect }
-        >
-          Entrar
-        </button>
+      <LoginStyle data-testid="page-login">
+        <img
+          src="https://images.pexels.com/photos/907526/pexels-photo-907526.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          alt="background"
+        />
+        <div>
+          <label htmlFor="login-name-input">
+            <input
+              data-testid="login-name-input"
+              placeholder="usuário"
+              onChange={ handleNameUser }
+            />
+          </label>
+          <label htmlFor="login-password-input">
+            <input
+              data-testid="login-password-input"
+              placeholder="password"
+              type="password"
+              onChange={ handleNameUser }
+            />
+          </label>
+          <button
+            type="submit"
+            data-testid="login-submit-button"
+            disabled={ disable }
+            onClick={ handleLoadingOrRedirect }
+          >
+            Login
+          </button>
+        </div>
         {redirect && (<Redirect to="/search" />)}
-      </div>
+      </LoginStyle>
     )
   );
 };
