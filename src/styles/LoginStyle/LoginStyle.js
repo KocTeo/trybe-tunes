@@ -12,33 +12,33 @@ const LoginStyle = styled.div`
     }
 
     div {
-        align-items: center;
         display: flex;
+        align-items: center;
         flex-direction: column;
         justify-content: center;
 
-        width: 300px;
-        height: 300px;
-        border-radius: 45px;
-        background-color: black;
+        width: 325px;
+        height: 382px;
+        background: #011627;
+        box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
 
         margin-top: -1100px;
-        margin-left: 780px;
+        margin-left: 800px;
     }
 
     input {
-        width: 250px;
-        border: 1px solid #2EE59D;
-        border-radius: 40px;
-        padding: 10px;
-        font-size: 16px;
-        font-family: 'Roboto', sans-serif;
-        margin-bottom: 20px;
+        font-size: 20px;
+        width: 272px;
+        height: 54px;
+        background: #D9D9D9;
+        border-radius: 5px;
+        margin: 15px;
     }
 
     button {
         width: 250px;
-        height: 45px;
+        height: 60px;
         font-family: 'Roboto', sans-serif;
         font-size: 11px;
         text-transform: uppercase;
@@ -52,7 +52,7 @@ const LoginStyle = styled.div`
         transition: all 0.3s ease 0s;
         cursor: pointer;
         outline: none;
-        margin-top: 20px;
+        margin-top: 50px;
     }
 
     button:hover {
