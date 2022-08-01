@@ -17,10 +17,11 @@ const LoginStyle = styled.div`
         flex-direction: column;
         justify-content: center;
 
-        width: 300px;
-        height: 300px;
-        border-radius: 45px;
-        background-color: black;
+        width: 325px;
+        height: 385px;
+        background: rgba(1, 22, 39, 0.8);
+        box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
 
         margin-top: -1100px;
         margin-left: 780px;
@@ -28,36 +29,40 @@ const LoginStyle = styled.div`
 
     input {
         width: 250px;
-        border: 1px solid #2EE59D;
-        border-radius: 40px;
+        height: 30px;
         padding: 10px;
+
+        background: #D9D9D9;
+        border-radius: 5px;
+        border: none;
+
         font-size: 16px;
         font-family: 'Roboto', sans-serif;
+
         margin-bottom: 20px;
     }
 
     button {
         width: 250px;
-        height: 45px;
+        height: 50px;
         font-family: 'Roboto', sans-serif;
         font-size: 11px;
         text-transform: uppercase;
         letter-spacing: 2.5px;
         font-weight: 500;
         color: #000;
-        background-color: #fff;
+        background: #C5FFFD;
         border: none;
-        border-radius: 45px;
+        border-radius: 10px;
         box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease 0s;
         cursor: pointer;
         outline: none;
-        margin-top: 20px;
+        margin-top: 50px;
     }
 
     button:hover {
-        background-color: #2EE59D;
-        box-shadow: 0px 15px 20px rgba(46, 229, 190, 0.4);
+        background: #272727;
         color: #fff;
         transform: translateY(-7px);
     }
