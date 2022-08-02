@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Header from '../components/Header';
+
+// import Header from '../components/Header';
+import Header from '../functionalComponents/Header';
 
 class Favorites extends Component {
   render() {
