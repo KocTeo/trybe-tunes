@@ -6,7 +6,9 @@ import SearchStyle from '../styles/SearchStyle/SearchStyle';
 // import Header from '../components/Header';
 import Header from './Header';
 
-import CardAlbum from '../components/CardAlbum';
+// import CardAlbum from '../components/CardAlbum';
+import CardAlbum from './CardAlbum';
+
 import Loading from '../pages/Loading';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 
@@ -64,17 +66,23 @@ const Search = () => {
           { ' ' }
           { artistName }
         </h2>
-        { responseApi && albuns.length > 0 ? (
-          albuns.map((album) => (
-            <CardAlbum
-              key={ album.collectionId }
-              artistName={ album.artistName }
-              collectionName={ album.collectionName }
-              artworkUrl100={ album.artworkUrl100 }
-              collectionId={ album.collectionId }
-            />))
-        )
-          : (<span style={ { marginLeft: '230px' } }>Nenhum álbum foi encontrado</span>) }
+        <div style={ { display: 'flex', flexWrap: 'wrap' } }>
+          { responseApi && albuns.length > 0 ? (
+            albuns.map((album) => (
+              <CardAlbum
+                key={ album.collectionId }
+                artistName={ album.artistName }
+                collectionName={ album.collectionName }
+                artworkUrl100={ album.artworkUrl100 }
+                collectionId={ album.collectionId }
+              />))
+          )
+            : (
+              <span style={ { marginLeft: '230px' } }>
+                Nenhum álbum foi encontrado
+              </span>
+            ) }
+        </div>
       </BackgroundStyle>
     </div>
   );
